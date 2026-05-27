@@ -22,3 +22,23 @@ To edit this repository in MakeCode.
 
 * for PXT/microbit
 <script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+
+**How to use**
+
+Press A to tickle baby
+
+Press B to feed baby
+
+Make loud noises to wake up the baby
+
+Shake the micro bit to unalive the baby
+
+Press Logo to restart
+
+**Features**
+
+The baby sleeps after **15 seconds*
+
+The baby gets satisfied after being feeded
+
+the baby laughts out loud by tickiling him
