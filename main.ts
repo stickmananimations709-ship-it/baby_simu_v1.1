@@ -23,7 +23,7 @@ input.onButtonPressed(Button.A, function () {
         `)
     basic.showLeds(`
         # # . # #
-        . . . . .
+        . . . . #
         # . . . #
         . # # # .
         . . . . .
@@ -151,6 +151,33 @@ input.onButtonPressed(Button.B, function () {
         . # # # .
         `)
 })
+input.onPinPressed(TouchPin.P1, function () {
+    basic.clearScreen()
+    music.stopAllSounds()
+    basic.showLeds(`
+        # # . # #
+        . . . . .
+        . . # . .
+        . # . # .
+        . . # . .
+        `)
+    music.play(music.builtinPlayableSoundEffect(soundExpression.yawn), music.PlaybackMode.UntilDone)
+    basic.pause(3000)
+    basic.showLeds(`
+        . . . . .
+        # # . # #
+        . . . . .
+        . # # # .
+        . . . . .
+        `)
+    music.play(music.stringPlayable("E E G G G E E E ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("G G G G E G C5 C5 ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("B B A A A A G G ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("D E F F F F D E ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("F F F F D F B A ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("A G G B B C5 C5 C5 ", 281), music.PlaybackMode.UntilDone)
+    music.play(music.stringPlayable("C5 C5 C5 C5 - - - - ", 281), music.PlaybackMode.UntilDone)
+})
 input.onGesture(Gesture.Shake, function () {
     music.play(music.createSoundExpression(WaveShape.Square, 5000, 5000, 255, 255, 5000, SoundExpressionEffect.Vibrato, InterpolationCurve.Linear), music.PlaybackMode.LoopingInBackground)
     basic.showLeds(`
@@ -187,6 +214,70 @@ input.onGesture(Gesture.Shake, function () {
     basic.pause(1000)
     basic.showString("You killed the baby!")
     basic.clearScreen()
+})
+input.onSound(DetectedSound.Quiet, function () {
+    basic.pause(60000)
+    basic.showLeds(`
+        . . . . .
+        # . # . .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(1000)
+    basic.showLeds(`
+        . . . . .
+        . . # . #
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(1000)
+    basic.showLeds(`
+        . . . . .
+        . # . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.pause(2000)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # . # #
+        . . . . .
+        . # # # .
+        # . . . #
+        # # # # #
+        `)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # . # #
+        . . . . .
+        . # # # .
+        # . . . #
+        # # # # #
+        `)
+    basic.clearScreen()
+    basic.showLeds(`
+        # # . # #
+        . . . . .
+        . # # # .
+        # . . . #
+        # # # # #
+        `)
+    music.play(music.createSoundExpression(
+    WaveShape.Sawtooth,
+    4399,
+    4509,
+    255,
+    255,
+    15000,
+    SoundExpressionEffect.None,
+    InterpolationCurve.Logarithmic
+    ), music.PlaybackMode.UntilDone)
+    basic.clearScreen()
+    music.stopAllSounds()
+    basic.showString("He is alone, you upset the baby")
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     basic.showIcon(IconNames.Happy)
